@@ -13,8 +13,10 @@ public class b1StartNewBag extends Prodn {
 	final static String name = "START-NEW-BAG";
 	final static String[] antes = {"step is bag item",
 	                               "current bag no ?N space ?BS"};
-	final static String[] adds = {"current bag no ?NB space 100"};
-	final static String[] dels = {"current bag no ?N space ?BS"};
+	final static String[] adds = {"current bag no ?NB space 100",
+			                      "number of bags is ?NB"};
+	final static String[] dels = {"current bag no ?N space ?BS",
+			                      "number of bags is ?NB"};
 	final static String[] remarks = {"Starting bag ?NB"};
 
 
