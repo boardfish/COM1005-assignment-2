@@ -18,15 +18,18 @@ public class TestPS
    bagger1.add(new b1Start());
    bagger1.add(new b1GetNextItem());
    bagger1.add(new b1BagInCurrent());
+   bagger1.add(new b1IterateBags());
    bagger1.add(new b1StartNewBag());
 
    //initial facts
 
    ArrayList<String> stm = new ArrayList<String>();
    stm.add("step is start bagging");
-   stm.add("trolley contains bread space 30");
-   stm.add("trolley contains spuds space 50");
-   stm.add("trolley contains cornflakes space 40");
+   TrolleyGen generator = new TrolleyGen(128,10);
+   String[] trolley = generator.fillTrolley();
+   for (String item : trolley) {
+	   stm.add(item);
+   }
 
    //prod sys engine
 

@@ -29,7 +29,10 @@ public class ProdSys {
 
     	while (prodFired) { // continue until no production fires
     		scr.println("------------------------------------------------------------------");
-    		scr.println("STM= "+stm);
+    		scr.println("STM= ");
+    		for (String ante : stm) {
+    			scr.println(ante);
+    		}
     		scr.println();
 
     		prodFired=false; //will be reset to true when a prodn is fired

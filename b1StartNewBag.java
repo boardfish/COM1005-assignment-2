@@ -12,11 +12,14 @@ import sheffield.*;
 public class b1StartNewBag extends Prodn {
 	final static String name = "START-NEW-BAG";
 	final static String[] antes = {"step is bag item",
-	                               "current bag no ?N space ?BS"};
-	final static String[] adds = {"current bag no ?NB space 100",
-			                      "number of bags is ?NB"};
-	final static String[] dels = {"current bag no ?N space ?BS",
-			                      "number of bags is ?NB"};
+	                               "current bag no ?N",
+	                               "bag no ?N space ?BS",
+	                               "number of bags is ?ONB"};
+	final static String[] adds = {"bag no ?NB space 100",
+								  "current bag no ?NB",
+								  "number of bags is ?NB"};
+	final static String[] dels = {"current bag no ?N",
+								  "number of bags is ?ONB"};
 	final static String[] remarks = {"Starting bag ?NB"};
 
 
