@@ -11,7 +11,7 @@ import pmatch.*;
 
 public class TestPS
 {
- public static void main(String[] arg) {
+ public static void main(String[] args) {
    // create objects for input and output
    EasyWriter scr = new EasyWriter();
    ArrayList<Prodn> bagger1 = new ArrayList<Prodn>(); //make the bagger1 rules
@@ -25,7 +25,9 @@ public class TestPS
 
    ArrayList<String> stm = new ArrayList<String>();
    stm.add("step is start bagging");
-   TrolleyGen generator = new TrolleyGen(128,10);
+   int seed = Integer.parseInt(args[0]);
+   int noOfItems = Integer.parseInt(args[1]);
+   TrolleyGen generator = new TrolleyGen(seed,noOfItems);
    String[] trolley = generator.fillTrolley();
    for (String item : trolley) {
 	   stm.add(item);
