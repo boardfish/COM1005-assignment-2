@@ -17,17 +17,23 @@ public class TestPS
    ArrayList<Prodn> bagger1 = new ArrayList<Prodn>(); //make the bagger1 rules
    bagger1.add(new b1Start());
    bagger1.add(new b1GetNextItem());
+   bagger1.add(new b1CheckBag());
+   bagger1.add(new b1IterateBag());
    bagger1.add(new b1BagInCurrent());
    bagger1.add(new b1StartNewBag());
 
    //initial facts
 
    ArrayList<String> stm = new ArrayList<String>();
-   stm.add("step is start bagging");
-   stm.add("trolley contains bread space 30");
-   stm.add("trolley contains spuds space 50");
-   stm.add("trolley contains cornflakes space 40");
 
+   TrolleyGen generator = new TrolleyGen(406718,4);
+   String[] trolley = generator.fillTrolley();
+   stm.add("step is start bagging");
+   for (String item : trolley) {
+	   stm.add(item);
+   }
+   stm.add("minimum space 100 in bag 1");
+   
    //prod sys engine
 
    ProdSys ps=new ProdSys(bagger1);

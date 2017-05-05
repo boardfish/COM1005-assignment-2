@@ -10,9 +10,11 @@ import sheffield.*;
 public class b1GetNextItem extends Prodn {
 	final static String name = "GET-NEXT-ITEM";
 	final static String[] antes = {"step is get next item",
-	                               "trolley contains ?I space ?S"};
-	final static String[] adds = {"step is bag item",
-							      "item to bag ?I space ?S"};
+	                               "trolley contains ?I space ?S",
+	                               };
+	final static String[] adds = {"step is check bag",
+							      "item to bag ?I space ?S"
+							      };
 	final static String[] dels = {"step is get next item",
 	                              "trolley contains ?I space ?S"};
 	final static String[] remarks = {"bagging ?I"};

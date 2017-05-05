@@ -13,13 +13,16 @@ public class b1BagInCurrent extends Prodn {
 	final static String name = "BAG-IN-CURRENT";
 	final static String[] antes = {"step is bag item",
 	                               "item to bag ?I space ?S",
-	                               "current bag no ?N space ?BS"};
+	                               "current bag no ?N space ?BS",
+	                               "minimum space ?MS in bag ?MN"};
 	final static String[] adds = {"step is get next item",
 							      "bag ?N contains ?I",
-							      "current bag no ?N space ?RS"};
+							      "current bag no ?N space ?RS",
+							      "minimum space ?NMS in bag ?NMN",};
 	final static String[] dels = {"step is bag item",
 	                              "item to bag ?I space ?S",
-	                              "current bag no ?N space ?BS"};
+	                              "current bag no ?N space ?BS",
+	                              "minimum space ?MS in bag ?MN"};
 	final static String[] remarks = {"?I in bag no ?N"};
 
 	public String getName(){return name;}
@@ -39,6 +42,8 @@ public class b1BagInCurrent extends Prodn {
 		Integer spaceLeft = Integer.valueOf((String) c.get("?BS"));
 		Integer spaceNeeded = Integer.valueOf((String) c.get("?S"));
 		c.put("?RS", String.valueOf(spaceLeft.intValue()-spaceNeeded.intValue()));
+		c.put("?NMS", String.valueOf(c.get("?RS")));
+		c.put("?NMN", String.valueOf(c.get("?N")));
 		return c;}
 
 }
